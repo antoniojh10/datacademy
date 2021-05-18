@@ -31,7 +31,7 @@ def run():
 
     while True:
         print("-----------------------------------------------------------------------")
-        option_selected = input(
+        selected_option = input(
             """
         1 - Millas a kilometros
         2 - Kilometros a millas
@@ -40,16 +40,16 @@ def run():
         )
 
         try:
-            assert option_selected.isnumeric(), "Ingresa una opcion valida"
-            option_selected = int(option_selected)
-            assert option_selected in options, "Ingresa una opcion valida"
+            assert selected_option.isnumeric(), "Ingresa una opcion valida"
+            selected_option = int(selected_option)
+            assert selected_option in options, "Ingresa una opcion valida"
         except AssertionError as ae:
             print(ae)
         else:
-            if option_selected == 1 or option_selected == 2:
-                transform(option_selected)
-            else:
+            if selected_option == 3:
                 break
+            else:
+                transform(selected_option)
 
     print("Ten un gran día")
 
